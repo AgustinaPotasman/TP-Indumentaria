@@ -42,8 +42,8 @@ public class HomeController : Controller
                 {
                     if (Remera != "")
                     {
-                        Indumentaria ropa = new Indumentaria (Media,Pantalon, Remera);
-                        return View();
+                        EquiposIndumentaria.Add(Equipo, Media, Pantalon, Remera);
+                        return View(); 
                     }
                     else
                     {
@@ -74,5 +74,13 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+    private class EquiposIndumentaria
+    {
+        internal static void Add(string equipo, string media, string pantalon, string remera)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
