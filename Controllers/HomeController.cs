@@ -15,13 +15,59 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        ViewBag.IndumentariasDeEquipos = Diccionary<>IndumentariasEquipos;
+        ViewBag.EquiposIndumentaria = Equipos.EquiposIndumentaria;
         return View();
     }
 
+    public IActionResult SelectIndumentaria()
+    {
+        ViewBag.Equipos = Equipos.ListaEquipos;
+        ViewBag.Medias = Equipos.ListaMedias;
+        ViewBag.Pantalones = Equipos.ListaPantalones;
+        ViewBag.Remeras = Equipos.ListaRemeras;
+        return View();
+    }
     public IActionResult Privacy()
     {
         return View();
+    }
+
+    public IActionResult GuardarIndumentaria (string Equipo, string Media, string Pantalon, string Remera)
+    {
+        if (Equipo != "")
+        {
+            if (Media != "")
+            {
+                if (Pantalon != "")
+                {
+                    if (Remera != "")
+                    {
+                        Indumentaria ropa = new Indumentaria (Media,Pantalon, Remera);
+                        return View();
+                    }
+                    else
+                    {
+                        ViewBag.MensajeDeError = "Error! Mal ingreso de datos";
+                        return View(SelectIndumentaria());
+                    }
+                }
+                else
+                {
+                    ViewBag.MensajeDeError = "Error! Mal ingreso de datos";
+                    return View(SelectIndumentaria());
+                }
+            }
+            else
+            {
+                ViewBag.MensajeDeError = "Error! Mal ingreso de datos";
+                return View(SelectIndumentaria());
+            }
+        }
+        else
+        {
+            ViewBag.MensajeDeError = "Error! Mal ingreso de datos";
+            return View(SelectIndumentaria());
+        }
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
