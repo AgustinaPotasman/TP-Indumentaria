@@ -3,14 +3,13 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">Bienvenidos</h1>
     <p><a href="Views\Home\SelectIndumentaria.cshtml">Crear Indumentaria</a></p>
 
 </div>
 
-@foreach (var Equipo in Equipos.ListaEquipos)
+@foreach (var equipo in Equipos.ListaEquipos) 
 {
-    ViewBag.Equipo();
-}
-
-    
+    ViewBag.Equipos = equipo;
+    <p>@equipo</p>
+}                                                                                          

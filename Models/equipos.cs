@@ -8,10 +8,10 @@ static class Equipos
 
     static Equipos()
     {
-        ListaEquipos = new List<string>{"Equipo1", "Equipo2", "Equipo3", "Equipo4", "Equipo5"};
-        ListaMedias = new List<string>{"media1.jpg", "media2.jpg", "media3.jpg", "media4.jpg", "media5.jpg"};
-        ListaPantalones = new List<string>{"pantalon1.jpg", "pantalon2.jpg", "pantalon3.jpg", "pantalon4.jpg", "pantalon5.jpg"};
-        ListaRemeras = new List<string>{"remera1.jpg", "remera2.jpg", "remera3.jpg", "remera4.jpg", "remera5.jpg"};
+        ListaEquipos = new List<string>{"1Equipo", "2Equipo", "3Equipo"};
+        ListaMedias = new List<string>{"1Medias.jpg", "2Medias.jpg", "3Medias.jpg"};
+        ListaPantalones = new List<string>{"1Pantalon.jpg", "2Pantalon.jpg", "3Pantalon.jpg"};
+        ListaRemeras = new List<string>{"1Remera.jpg", "1Remera.jpg", "1Remera.jpg"};
         EquiposIndumentaria = new Dictionary<string, Indumentaria>();
     }
 
