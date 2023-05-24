@@ -1,19 +1,13 @@
 static class Equipos
 {
-    public static List<string> ListaEquipos { get; private set; }
-    public static List<string> ListaMedias { get; private set; }
-    public static List<string> ListaPantalones { get; private set; }
-    public static List<string> ListaRemeras { get; private set; }
-    public static Dictionary<string, Indumentaria>EquiposIndumentaria{ get; private set; }
+    public static List<string> ListaEquipos { get; private set; }= new List<string>{"1Equipo", "2Equipo", "3Equipo"};
+    public static List<string> ListaMedias { get; private set; } = new List<string>{"1Medias.jpg", "2Medias.jpg", "3Medias.jpg"};
+    public static List<string> ListaPantalones { get; private set; } = new List<string>{"1Pantalon.jpg", "2Pantalon.jpg", "3Pantalon.jpg"};
+    public static List<string> ListaRemeras { get; private set; } = new List<string>{"1Remera.jpg", "1Remera.jpg", "1Remera.jpg"};
+    public static Dictionary<string, Indumentaria>EquiposIndumentaria{ get; private set; }= new Dictionary<string, Indumentaria>();
 
-    static Equipos()
-    {
-        ListaEquipos = new List<string>{"1Equipo", "2Equipo", "3Equipo"};
-        ListaMedias = new List<string>{"1Medias.jpg", "2Medias.jpg", "3Medias.jpg"};
-        ListaPantalones = new List<string>{"1Pantalon.jpg", "2Pantalon.jpg", "3Pantalon.jpg"};
-        ListaRemeras = new List<string>{"1Remera.jpg", "1Remera.jpg", "1Remera.jpg"};
-        EquiposIndumentaria = new Dictionary<string, Indumentaria>();
-    }
+
+
 
     public static bool IngresarIndumentaria(string equipoSeleccionado, Indumentaria item)
     {
@@ -24,6 +18,4 @@ static class Equipos
         EquiposIndumentaria.Add(equipoSeleccionado, item);
         return true;
     }
-
-
 }

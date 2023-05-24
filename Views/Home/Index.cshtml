@@ -2,14 +2,20 @@
     ViewData["Title"] = "Home Page";
 }
 
+
 <div class="text-center">
     <h1 class="display-4">Bienvenidos</h1>
     <p><a href="Views\Home\SelectIndumentaria.cshtml">Crear Indumentaria</a></p>
 
+
 </div>
 
-@foreach (var equipo in Equipos.ListaEquipos) 
+
+@foreach (string equipo in ViewBag.EquiposIndumentaria.Keys)
 {
-    ViewBag.Equipos = equipo;
     <p>@equipo</p>
-}                                                                                          
+    <img src="@ViewBag.EquiposIndumentaria[equipo].Media">
+    <img scr="@ViewBag.EquiposIndumentaria[equipo].Pantalones">
+    <img scr="@ViewBag.EquiposIndumentaria[equipo].Camiseta">
+}       
+                                                            
