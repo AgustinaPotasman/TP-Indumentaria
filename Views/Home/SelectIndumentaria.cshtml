@@ -1,8 +1,78 @@
-<label for="Elegir equipo">:Equipos</label>
-    <select> River Plate </select>    
-    <select> Seleccion Argentina </select>    
-    <select> Manchester City </select>   
-    <button class="agregar"><u><Elegir equipo></u></button>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Indumentaria</title>
+  <style>
+    /* Estilos CSS */
+    .form-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
 
+    .form-container h2 {
+      text-align: center;
+    }
 
- <img src= "wwwroot\Img\1Escudo.jpg" widht= "35%" height="250" alt="auto"/>
+    .form-container label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .form-container input[type="number"] {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    .form-container img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+
+    .form-container input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .form-container input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Select Indumentaria</h2>
+    <form action="/Home/GuardarIndumentaria" method="post">
+      <label for="equipo">Selecciona un equipo:</label>
+      <select id="equipo" name="equipo">
+        <!-- Aquí debes iterar sobre la lista de equipos y generar las opciones -->
+        <option value="equipo1">Equipo 1</option>
+        <option value="equipo2">Equipo 2</option>
+        <option value="equipo3">Equipo 3</option>
+        <!-- Agrega más opciones según la lista de equipos -->
+      </select>
+
+      <label for="medias">Medias:</label>
+      <img src="ruta_a_la_imagen_medias.jpg" alt="Medias">
+      <input type="number" id="medias" name="medias" min="0">
+
+      <label for="pantalones">Pantalones:</label>
+      <img src="ruta_a_la_imagen_pantalones.jpg" alt="Pantalones">
+      <input type="number" id="pantalones" name="pantalones" min="0">
+
+      <label for="remeras">Remeras:</label>
+      <img src="ruta_a_la_imagen_remeras.jpg" alt="Remeras">
+      <input type="number" id="remeras" name="remeras" min="0">
+
+      <input type="submit" value="Crear Indumentaria">
+    </form>
+  </div>
+</body>
+</html>
