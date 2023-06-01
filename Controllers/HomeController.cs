@@ -16,7 +16,6 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         ViewBag.EquiposIndumentaria = Equipos.EquiposIndumentaria;
-        ViewBag.Equipos = Equipos.ListaEquipos;
         return View();
     }
 
@@ -33,42 +32,18 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult GuardarIndumentaria (string Equipo, string Media, string Pantalon, string Remera)
+    public IActionResult GuardarIndumentaria (int Equipo, int Media, int Pantalon, int Remera)
     {
-        if (Equipo != "")
+        if(Equipo < 0 || Equipo > Equipos.ListaEquipos.count()-1 || Media < 0 || Media > Equipos.ListaMedias.count()-1 || Pantalon < 0 || Pantalones > Equipos.ListaPantalones.count()-1 ||Equipo < 0 || Remera > Equipos.ListaRemeras.count()-1 )
         {
-            if (Media != "")
-            {
-                if (Pantalon != "")
-                {
-                    if (Remera != "")
-                    {
-                        EquiposIndumentaria.Add(Equipo, Media, Pantalon, Remera);
-                        return View(); 
-                    }
-                    else
-                    {
-                        ViewBag.MensajeDeError = "Error! Mal ingreso de datos";
-                        return View(SelectIndumentaria());
-                    }
-                }
-                else
-                {
-                    ViewBag.MensajeDeError = "Error! Mal ingreso de datos";
-                    return View(SelectIndumentaria());
-                }
-            }
-            else
-            {
-                ViewBag.MensajeDeError = "Error! Mal ingreso de datos";
-                return View(SelectIndumentaria());
-            }
+            ViewBag.Error = "Debe seleccionar todos los campos";
+            return View("SelectIndumentaria");
         }
         else
         {
-            ViewBag.MensajeDeError = "Error! Mal ingreso de datos";
-            return View(SelectIndumentaria());
+            Indumentaria indumentaria = new Indumentaria();
         }
+        return View();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

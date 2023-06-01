@@ -14,5 +14,4 @@ class Indumentaria
         Pantalon=pantalon;
         Camiseta=camiseta;
     }
-
 }

@@ -6,16 +6,17 @@ static class Equipos
     public static List<string> ListaRemeras { get; private set; } = new List<string>{"1Remera.jpg", "1Remera.jpg", "1Remera.jpg"};
     public static Dictionary<string, Indumentaria>EquiposIndumentaria{ get; private set; }= new Dictionary<string, Indumentaria>();
 
-
-
-
     public static bool IngresarIndumentaria(string equipoSeleccionado, Indumentaria item)
     {
         if (EquiposIndumentaria.ContainsKey(equipoSeleccionado))
         {
+            EquiposIndumentaria[equipoSeleccionado] = item;
+            return true;
+        }
+        else
+        {
+            EquiposIndumentaria.Add(equipoSeleccionado, item);
             return false;
         }
-        EquiposIndumentaria.Add(equipoSeleccionado, item);
-        return true;
     }
 }
